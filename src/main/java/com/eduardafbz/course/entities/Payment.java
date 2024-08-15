@@ -1,9 +1,10 @@
 package com.eduardafbz.course.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.time.Instant;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +24,7 @@ public class Payment implements Serializable {
 	private Long id;
 	private Instant moment;
 	
+	@JsonIgnore
 	@OneToOne
 	@MapsId
 	private Order order;
